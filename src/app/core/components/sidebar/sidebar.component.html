@@ -12,15 +12,15 @@
       <!-- Dashboard -->
       <li [routerLink]="PROJECT_PAGES.dashboard.base" routerLinkActive="active"
         class="my-2 d-flex small  align-items-center  rounded-2 p-2 link-item ">
-        <i class="text-muted me-2 pi pi-home"></i>
-        <span class="fw-medium text-black">Dashboard</span>
+        <i class="text-muted  pi pi-home"></i>
+        <span class="fw-medium  mx-2 text-black">{{ 'SIDEBAR.DASHBOARD' | translate }}</span>
       </li>
 
       <!-- Orders -->
       <li [routerLink]="" routerLinkActive="active"
         class="my-2 d-flex small  align-items-center  rounded-2 p-2 link-item ">
-        <i class="text-muted me-2 pi pi-shopping-cart"></i>
-        <span class="fw-medium text-black">Orders</span>
+        <i class="text-muted pi pi-shopping-cart"></i>
+        <span class="fw-medium mx-2 text-black">{{ 'SIDEBAR.ORDERS' | translate }}</span>
       </li>
 
 
