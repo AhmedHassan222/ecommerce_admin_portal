@@ -1,0 +1,8 @@
+.link-item {
+  background-color: rgb(252, 251, 251);
+  transition: all 0.3s;
+  &:hover {
+    background-color: rgb(245, 243, 243);
+    cursor: pointer;
+  }
+}
