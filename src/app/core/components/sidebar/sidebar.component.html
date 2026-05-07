@@ -6,27 +6,23 @@
   </div>
 
   <!-- Sidebar Content -->
-  <div class="border-top px-2 ">
+  <div class="border-top px-3 ">
     <ul class=" list-unstyled ">
 
       <!-- Dashboard -->
-      <li class="my-2 d-flex small  align-items-center  rounded-2 p-2 link-item ">
+      <li [routerLink]="PROJECT_PAGES.dashboard.base" routerLinkActive="active"
+        class="my-2 d-flex small  align-items-center  rounded-2 p-2 link-item ">
         <i class="text-muted me-2 pi pi-home"></i>
-        <a routerLink="/dashboard" class=" text-black fw-medium text-decoration-none ">
-          Dashboard
-
-        </a>
-
+        <span class="fw-medium text-black">Dashboard</span>
       </li>
 
-      <!-- Ecommerce -->
-      <li class="my-2 d-flex small align-items-center  rounded-2 p-2 link-item">
+      <!-- Orders -->
+      <li [routerLink]="" routerLinkActive="active"
+        class="my-2 d-flex small  align-items-center  rounded-2 p-2 link-item ">
         <i class="text-muted me-2 pi pi-shopping-cart"></i>
-        <a routerLink="/ecommerce" class=" text-black fw-medium text-decoration-none ">
-          Orders
-        </a>
-
+        <span class="fw-medium text-black">Orders</span>
       </li>
+
 
     </ul>
 
