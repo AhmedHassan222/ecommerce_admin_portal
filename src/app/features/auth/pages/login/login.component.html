@@ -1,0 +1,131 @@
+<div class="container-fluid min-vh-100">
+    <div class="row min-vh-100">
+
+        <!-- Left Image -->
+        <div class="col-md-7 d-none d-md-block p-0">
+            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085" alt="Login Image"
+                class="w-100 h-100 object-fit-cover" />
+        </div>
+
+        <!-- Right Form -->
+        <div class=" col-md-5 d-flex align-items-center justify-content-center bg-white">
+
+            <div class="w-100 px-4 px-md-5" style="max-width: 450px;">
+
+                <h2 class="fw-bold mb-2">
+                    Welcome Back
+                </h2>
+
+                <p class="text-muted mb-4">
+                    Please login to your account
+                </p>
+
+                <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+
+                    <!-- Email -->
+                    <div class="mb-2">
+
+                        <label for="email" class="form-label fw-medium">
+                            Email
+                        </label>
+
+                        <input type="email" formControlName="email" id="email" class="form-control form-control-lg"
+                            [class.is-invalid]="loginForm.get('email')?.invalid && loginForm.get('email')?.touched"
+                            placeholder="Enter your email" />
+
+                        @if (loginForm.get('email')?.invalid && loginForm.get('email')?.touched) {
+
+                        <div class="text-danger small mt-2">
+
+                            @if (loginForm.get('email')?.getError('required')) {
+                            <span>
+                                Email is required
+                            </span>
+                            }
+
+                            @if (loginForm.get('email')?.getError('email')) {
+                            <span>
+                                Please enter a valid email
+                            </span>
+                            }
+
+                        </div>
+
+                        }
+
+                    </div>
+
+                    <!-- Password -->
+                    <div class="mb-2">
+
+                        <label for="password" class="form-label fw-medium">
+                            Password
+                        </label>
+
+                        <div class="position-relative">
+
+                            <input [type]="!showPassword() ? 'password' : 'text'" formControlName="password"
+                                id="password" class="form-control form-control-lg pe-5"
+                                placeholder="Enter your password" />
+
+                            <i class="fa-solid position-absolute top-50 end-0 translate-middle-y  me-3 cursor-pointer"
+                                [class.fa-eye]="showPassword()" [class.fa-eye-slash]="!showPassword()"
+                                (click)="showPassword.set(!showPassword())" style="cursor: pointer">
+                            </i>
+
+                        </div>
+
+                        @if (loginForm.get('password')?.invalid &&
+                        loginForm.get('password')?.touched) {
+
+                        <div class="text-danger small mt-2">
+
+                            @if (loginForm.get('password')?.getError('required')) {
+
+                            <span>
+                                Password is required
+                            </span>
+
+                            }
+
+                            @if (loginForm.get('password')?.getError('pattern')) {
+
+                            <span>
+                                Password must be between 8 and 20 characters
+                                and include at least one uppercase letter.
+                            </span>
+
+                            }
+
+                        </div>
+
+                        }
+
+                    </div>
+                    <div class="mb-2">
+                        <a routerLink="/forget-password" class="text-decoration-none">Forgot Password?</a>
+                    </div>
+                    <!-- Button -->
+                    <button type="submit" [disabled]="loginForm.invalid" class="btn btn-primary w-100 py-3 fw-semibold">
+                        @if (!isLoading()) {
+                        <span>Login</span>
+                        }@else {
+                        <i class="fa-solid fa-spinner fa-spin"></i>
+
+                        }
+                    </button>
+
+                    @if (ErrorMes()) {
+                    <div class="alert alert-danger mt-3" role="alert">
+                        {{ ErrorMes() }}
+                    </div>
+                    }
+                </form>
+
+                <button class="h6 mt-2 text-primary btn"> Remember Me</button>
+            </div>
+
+        </div>
+
+    </div>
+</div>
