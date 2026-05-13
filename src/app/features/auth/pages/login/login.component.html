@@ -106,14 +106,17 @@
                         <a routerLink="/forget-password" class="text-decoration-none">Forgot Password?</a>
                     </div>
                     <!-- Button -->
-                    <button type="submit" [disabled]="loginForm.invalid" class="btn btn-primary w-100 py-3 fw-semibold">
+                    <!-- <button type="submit" [disabled]="loginForm.invalid" class="btn btn-primary w-100 py-3 fw-semibold">
                         @if (!isLoading()) {
                         <span>Login</span>
                         }@else {
                         <i class="fa-solid fa-spinner fa-spin"></i>
 
                         }
-                    </button>
+                    </button> -->
+                    <app-button content="Login" [loading]="isLoading()" [disabled]="loginForm.invalid"
+                        type="submit" class="w-100 py-3 fw-semibold">
+                    </app-button>
 
                     @if (ErrorMes()) {
                     <div class="alert alert-danger mt-3" role="alert">
