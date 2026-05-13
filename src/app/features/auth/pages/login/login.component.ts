@@ -10,10 +10,11 @@ import { ILoginResponse } from '../../models/login-response.model';
 import { Router, RouterLink } from '@angular/router';
 import { ILoginRequest } from '../../models/login-request.model';
 import { PROJECT_PAGES } from '../../../../shared/pages/project-pages.model';
+import { ButtonComponent } from "../../../../shared/components/button/button.component";
 
 @Component({
   selector: 'app-login',
-  imports: [ReactiveFormsModule ,RouterLink],
+  imports: [ReactiveFormsModule, RouterLink, ButtonComponent],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
 })
