@@ -1,1 +1,16 @@
-<p>bread-crumbs works!</p>
+<section>
+  <ol class="breadcrumb">
+    @for(item of items(); track item.link;) {
+      <li
+        class="breadcrumb-item"
+      >
+          <a class="text-decoration-none text-black"
+          
+           [routerLink]="item.link">
+           
+            {{ item.name }}
+          </a>
+      </li>
+    }
+  </ol>
+</section>

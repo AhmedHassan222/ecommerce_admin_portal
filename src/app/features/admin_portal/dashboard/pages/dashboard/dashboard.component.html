@@ -1,1 +1,11 @@
-<p>dashboard works!</p>
+<app-bread-crumbs
+  [items]="breadcrumbs">
+</app-bread-crumbs>
+
+
+
+<app-pagination
+  [currentPage]="currentPage"
+  [totalPages]="[1, 2, 3, 4, 5]"
+  (pageChange)="changePage($event)">
+</app-pagination>
