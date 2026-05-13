@@ -13,10 +13,11 @@ import {
 } from '@angular/forms';
 import { AuthService } from '../../../../core/services/auth/auth.service';
 import { Router } from '@angular/router';
+import { ButtonComponent } from "../../../../shared/components/button/button.component";
 
 @Component({
   selector: 'app-forget-password',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, ButtonComponent],
   templateUrl: './forget-password.component.html',
   styleUrl: './forget-password.component.scss',
 })
