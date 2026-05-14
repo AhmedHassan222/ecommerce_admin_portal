@@ -4,7 +4,7 @@ import { authGuard } from './core/guards/auth/auth.guard';
 import { ForgetPasswordComponent } from './features/auth/pages/forget-password/forget-password.component';
 
 export const routes: Routes = [
-  { path: 'dashboard', canActivate: [authGuard], loadChildren: () =>import('./features/admin_portal/portal.routes').then((r) => r.portalRoutes,
+  { path: '', canActivate: [authGuard], loadChildren: () =>import('./features/admin_portal/portal.routes').then((r) => r.portalRoutes,
       ),
   },
   {path:'', component:LoginComponent},
