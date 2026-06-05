@@ -1,6 +1,10 @@
 {
   "SIDEBAR": {
     "DASHBOARD": "Dashboard",
-    "ORDERS": "Orders"
+    "ORDERS": "Orders",
+    "pagination": {
+    "prev": "Prev",
+    "next": "Next"
+  }
   }
 }

@@ -1,6 +1,10 @@
 {
   "SIDEBAR": {
     "DASHBOARD": "لوحة التحكم",
-    "ORDERS": "الطلبات"
+    "ORDERS": "الطلبات",
+    "pagination": {
+    "prev": "السابق",
+    "next": "التالي"
+  }
   }
 }
